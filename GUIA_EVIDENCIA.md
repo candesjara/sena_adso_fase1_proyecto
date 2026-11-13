@@ -2,7 +2,16 @@
 
 En esta evidencia vas a construir una API que guarda datos en una base de datos y relaciona dos tablas. Parte del ejemplo de **categorías y artículos** que está en esta carpeta y adáptalo al tema de tu proyecto.
 
-Antes de empezar, ejecuta el ejemplo siguiendo el `README.md` y prueba sus rutas en Postman. Así sabrás cómo debe funcionar tu versión.
+Antes de empezar, ejecuta el ejemplo siguiendo el `README.md` (**opción A**: clonar el repositorio, `npm install`, `npm start`) y prueba sus rutas en Postman. Así sabrás cómo debe funcionar tu versión.
+
+Para tu propio proyecto, empieza con una carpeta vacía y sigue la **opción B** del `README.md`:
+
+```bash
+npm init -y
+npm install express
+```
+
+Luego crea tu `server.js` y, en `package.json`, cambia `"main"` a `"server.js"` y agrega el script `"start": "node server.js"`.
 
 ---
 

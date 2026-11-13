@@ -36,12 +36,73 @@ Relación: **una categoría tiene muchos artículos**, y **cada artículo perten
 
 ## Instalar e iniciar
 
+Hay dos formas de empezar. Usa la **opción A** si quieres ejecutar este ejemplo tal como está. Usa la **opción B** si quieres armar tu propio proyecto paso a paso, empezando con una carpeta vacía.
+
+### Opción A: a partir de este repositorio
+
+El repositorio ya trae `package.json` y `package-lock.json`, así que **no** necesitas `npm init` ni `npm install express`. Basta con `npm install`, que lee `package.json` y descarga lo que haga falta.
+
 ```bash
+git clone https://github.com/candesjara/sena_adso_fase1_proyecto.git
+cd sena_adso_fase1_proyecto
 npm install
 npm start
 ```
 
-Deberías ver:
+Si no usas Git, en GitHub haz clic en **Code → Download ZIP**, descomprime el archivo, abre una terminal en esa carpeta y ejecuta `npm install` y `npm start`.
+
+### Opción B: crear el proyecto desde cero
+
+Así se creó este ejemplo. Sigue estos pasos para tu propio proyecto:
+
+1. Crea una carpeta vacía y abre una terminal dentro de ella:
+
+   ```bash
+   mkdir mi-api
+   cd mi-api
+   ```
+
+2. Crea el `package.json` con los valores por defecto:
+
+   ```bash
+   npm init -y
+   ```
+
+3. Instala Express. Este comando lo descarga en `node_modules`, lo agrega a `"dependencies"` en `package.json` y crea `package-lock.json`:
+
+   ```bash
+   npm install express
+   ```
+
+4. Crea el archivo `server.js` y escribe el código de la API (puedes partir del `server.js` de este repositorio).
+
+5. Abre `package.json` y ajústalo. `npm init -y` pone `"main": "index.js"` y un script `"test"` que no sirve aquí. Cámbialos para que quede así (conserva la versión de Express que se haya instalado):
+
+   ```json
+   "main": "server.js",
+   "scripts": {
+     "start": "node server.js"
+   },
+   ```
+
+6. Si vas a usar Git, crea un archivo `.gitignore` con este contenido, para no subir las librerías ni la base de datos:
+
+   ```
+   node_modules/
+   *.db
+   ```
+
+7. Inicia la API:
+
+   ```bash
+   npm start
+   ```
+
+> **¿`npm install` o `npm install express`?** `npm install express` **agrega** una librería nueva al proyecto (se hace una sola vez, al crearlo). `npm install` sin nombre **instala** todo lo que ya está anotado en `package.json` (se hace cada vez que descargas o clonas un proyecto existente).
+
+### Al iniciar
+
+Con cualquiera de las dos opciones, deberías ver:
 
 ```
 Servidor escuchando en http://localhost:3000
